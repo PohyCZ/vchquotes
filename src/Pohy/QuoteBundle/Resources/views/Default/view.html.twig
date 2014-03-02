@@ -1,0 +1,7 @@
+{% extends "PohyQuoteBundle::layout.html.twig" %}
+
+{% block title "Quote " ~ quote.id %}
+
+{% block body %}
+	{{ quote.text|nl2br }}
+{% endblock %}

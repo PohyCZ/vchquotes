@@ -1,0 +1,4 @@
+pohy_quote:
+    resource: "@PohyQuoteBundle/Controller/"
+    type:     annotation
+    prefix:   /

@@ -1,0 +1,25 @@
+{% extends "PohyQuoteBundle::layout.html.twig" %}
+
+{% block title "#VCH Quotes" %}
+
+{% block body %}
+	{% for quote in quotes %}
+	{#<table border="0">
+		<tr>
+			<td><a href="{{ path('quote_view', {'id': quote.id}) }}">{{ "#" ~ quote.id }}</a> |
+		</tr>
+		<tr>
+			<td>{{ quote.text|nl2br }}</td>
+		<tr>
+	</table>
+	<br/>#}
+	<div class="pure-u-1-5">&nbsp;</div>
+	<div class="pure-u-3-5">
+		<h4><a href="{{ path('quote_view', {'id': quote.id}) }}">{{ "#" ~ quote.id }}</a></h4>
+		<blockquote>
+			{{ quote.text|nl2br }}
+		</blockquote>
+	</div>
+	<div class="pure-u-1-5">&nbsp;</div>
+	{% endfor %}
+{% endblock %}

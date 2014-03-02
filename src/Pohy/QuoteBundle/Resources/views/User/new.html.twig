@@ -1,0 +1,21 @@
+{% extends 'PohyQuoteBundle::layout.html.twig' %}
+
+{% block title "New user" %}
+
+{% block body %}
+	<div class="pure-u-3-2">&nbsp;</div>
+	<div class="pure-u-3-1">
+	<form action="{{ path('quote_user_new') }}" class="pure-form pure-form-stacked" method="post">
+		<fieldset>
+			<label for="username" class="required">Username</label>
+			<input type="text" id="username" name="_username" />
+			<label for="password">Password</label>
+			<input type="password" id="password" name="_password" />
+			<label for="confirm">Confirm password:</label>
+			<input type="password" id="confirm" name="_confirm" />
+			<input type="submit" id="submit" name="_submit" class="pure-button pure-button-primary" />
+		</fieldset>
+	</form>
+	</div>
+	<div class="pure-u-3-2">&nbsp;</div>
+{% endblock %}

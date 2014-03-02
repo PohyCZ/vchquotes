@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="{{ asset('css/main.css') }}"/>
+	<!-- <link rel="stylesheet" href="http://purecss.io/combo/1.11.2?/css/main-grid.css&/css/layouts/marketing.css"> -->
+	<!-- <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.4.2/base-min.css"> -->
+	<link rel="stylesheet" href="http://necolas.github.io/normalize.css/3.0.0/normalize.css">
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.4.2/pure-min.css">
+
+	<title>{% block title %}{% endblock %}</title>
+
+	{% block head %}{% endblock %}
+</head>
+<body>
+	<div class="header">
+		<div class="pure-menu pure-menu-open pure-menu-horizontal">
+			<a href="{{ path('quote_index') }}" class="pure-menu-heading">#VCH Quotes</a>
+			<ul>
+				<li><a class="pure-menu-selected" href="{{ path('quote_new') }}">New quote</a></li>
+				<li><a href="{{ path('quote_user_new') }}">Sign up</a></li>
+				<li><a href="{{ path('quote_user_login') }}">Sign in</a></li>
+			</ul>
+		</div>
+	</div>
+
+	{% for flashMessage in app.session.flashbag.get('notice') %}
+	    <div class="flash-notice">
+	        {{ flashMessage }}
+	    </div>
+	{% endfor %}
+
+	<div class="pure-g">
+		{% block body %}{% endblock %}
+	</div>
+</body>
+</html>
