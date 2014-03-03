@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Quote
  *
- * @ORM\Table(name="old_quote")
+ * @ORM\Table(name="quote")
  * @ORM\Entity
  */
 class Quote
@@ -43,7 +43,7 @@ class Quote
     private $visible;
 
     /**
-     * @ORM\ManyToOne(targetEntity="User")
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="quotes")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      */
     private $userId;

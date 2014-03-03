@@ -56,6 +56,11 @@ class User implements UserInterface
 	protected $roles;
 
     /**
+     * @ORM\OneToMany(targetEntity="Quote", mappedBy="userId")
+     */
+    protected $quotes;
+
+    /**
      * Constructor
      */
     public function __construct()

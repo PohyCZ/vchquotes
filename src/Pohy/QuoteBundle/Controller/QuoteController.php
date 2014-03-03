@@ -14,15 +14,28 @@ use Pohy\QuoteBundle\Form\QuoteType;
 class QuoteController extends Controller
 {
 	/**
-     * @Route("/quote/view/{id}", name="quote_view")
+     * @Route("/quote/view/{id}", name="quote_view_id")
      * @Template()
      */
-    public function viewAction($id)
+    public function viewIdAction($id)
     {
     	$em = $this->getDoctrine()->getManager();
     	$quote = $em->getRepository('PohyQuoteBundle:Quote')->find($id);
 
     	return array('quote' => $quote);
+    }
+
+    /**
+     * @Route("/quote/user/{username}", name="quote_view_user")
+     * @Template()
+     */
+    public function viewUserAction($username)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $user = $em->getRepository('PohyQuoteBundle:User')->findOneBy(array('username' => $username));
+        $quotes = $em->getRepository('PohyQuoteBundle:Quote')->findBy(array('userId' => $user->getId()));
+
+        return array('quotes' => $quotes);
     }
 
 
