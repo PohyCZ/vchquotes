@@ -1,0 +1,19 @@
+{% extends 'PohyQuoteBundle::layout.html.twig' %}
+
+{% block title "New user" %}
+
+{% block body %}
+	<div class="pure-u-2-5">&nbsp;</div>
+		<div class="pure-u-1-5">
+			{{ form_start(form, {'attr': {'class': 'pure-form pure-form-stacked'}}) }}
+			<fieldset>
+				{{ form_errors(form) }}
+				{{ form_widget(form.username, {'attr': {'placeholder': 'Username'}}) }}
+				{{ form_widget(form.password.first, {'attr': {'placeholder': 'Password'}}) }}
+				{{ form_widget(form.password.second, {'attr': {'placeholder': 'Password confirmation'}}) }}
+				{{ form_widget(form.submit, {'attr': {'class': 'pure-button pure-button-primary'}}) }}
+			{{ form_end(form) }}
+			</fieldset>
+			</div>
+	<div class="pure-u-2-5">&nbsp;</div>
+{% endblock %}

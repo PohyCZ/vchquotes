@@ -1,0 +1,21 @@
+{% extends 'PohyQuoteBundle::layout.html.twig' %}
+
+{% block title "Login" %}
+
+{% block body %}
+	<div class="pure-u-2-5">&nbsp;</div>
+	<div class="pure-u-1-5">
+		{% if error %}
+			{{ error.message }}
+		{% endif %}
+		<form action="{{ path('quote_login_check') }}" method="POST" class="pure-form pure-form-stacked">
+			<fieldset>
+			    <input id="username" type="text" name="_username" value="{{ last_username }}" placeholder="Username" />
+			    <input id="password" type="password" name="_password" placeholder="Password" />
+			    <a href="{{ path('quote_register') }}" class="pure-button">Sign up</a>
+			    <input type="submit" name="login" value="Sign in" class="pure-button pure-button-primary" />
+		    </fieldset>
+		</form>
+	</div>
+	<div class="pure-u-2-5">&nbsp;</div>
+{% endblock %}

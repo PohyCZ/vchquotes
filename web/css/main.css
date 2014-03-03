@@ -15,14 +15,15 @@ ul li { display: inline; }*/
 	box-shadow: 0 1px 1px rgba(0,0,0, 0.10);
 }
 
-.pure-u-3-5 {
+.quote {
+	padding: 1px 0;
 	border: none;
 	border-radius: 5px;
 	background-color: #f4f4f4;
 	margin-bottom: 5px;
 }
 
-.pure-u-3-5 blockquote {
+.quote blockquote {
 	border: 1px solid #cfcfcf;
 	border-left-width: 5px;
 	border-radius: 2px;
@@ -31,15 +32,28 @@ ul li { display: inline; }*/
 	margin: 1em 2em;
 }
 
-.pure-u-3-5 h4 {
+.quote h4 {
 	padding-left: 1.5em;
 	padding-bottom: 0;
 }
 
-.pure-u-3-5 h4 a {
+.quote h4 a {
 	color: #555;
 }
 
-.pure-u-3-5 h4 a:hover {
+.quote .controls {
+	display: none;
+}
+
+.quote:hover .controls {
+	display: inline;
+}
+
+.quote h4 a:hover {
 	color: #999;
+}
+
+.pure-form textarea {
+	height: 200px;
+	width: 100%;
 }

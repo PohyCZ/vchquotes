@@ -15,10 +15,7 @@
 	<br/>#}
 	<div class="pure-u-1-5">&nbsp;</div>
 	<div class="pure-u-3-5">
-		<h4><a href="{{ path('quote_view', {'id': quote.id}) }}">{{ "#" ~ quote.id }}</a></h4>
-		<blockquote>
-			{{ quote.text|nl2br }}
-		</blockquote>
+		{% include "PohyQuoteBundle::Quote/quote_view.html.twig" %}	
 	</div>
 	<div class="pure-u-1-5">&nbsp;</div>
 	{% endfor %}

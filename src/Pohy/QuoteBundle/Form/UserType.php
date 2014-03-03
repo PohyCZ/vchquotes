@@ -12,9 +12,10 @@ class UserType extends AbstractType
 	{
 		$builder->add('username', 'text');
 		$builder->add('password', 'repeated', array(
-			'first_name' 	=> 'passsword',
-			'second_name' 	=> 'confirm',
-			'type'			=> 'password'
+			'first_name' 	=> 'first',
+			'second_name' 	=> 'second',
+			'type'			=> 'password',
+			'invalid_message' => 'Passwords have to match'
 		));
 		$builder->add('submit', 'submit');
 	}

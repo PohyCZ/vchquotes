@@ -2,3 +2,7 @@ pohy_quote:
     resource: "@PohyQuoteBundle/Controller/"
     type:     annotation
     prefix:   /
+
+pohy_quote_secured:
+    resource: "@PohyQuoteBundle/Controller/SecuredController.php"
+    type:     annotation

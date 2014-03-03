@@ -1,0 +1,11 @@
+<div class="quote">
+	<h4><a href="{{ path('quote_view', {'id': quote.id}) }}">{{ "#" ~ quote.id }}</a>
+	{% if app.user %}{% if app.user.id == quote.userId.id or is_granted('ROLE_ADMIN') %}
+		<div class="controls">&nbsp;~ <a href="{{ path('quote_edit', {'id': quote.id}) }}">Edit</a>&nbsp; |
+		<a href="{{ path('quote_delete', {'id': quote.id}) }}">Delete</a></div>
+	{% endif %}{% endif %}
+	</h4>
+	<blockquote>
+		{{ quote.text|nl2br }}
+	</blockquote>
+</div>

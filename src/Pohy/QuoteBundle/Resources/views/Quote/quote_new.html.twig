@@ -1,0 +1,7 @@
+{{ form_start(form, {'attr': {'class': 'pure-form pure-form-stacked'}}) }}
+	<fieldset>
+		{{ form_errors(form) }}
+		{{ form_widget(form.text, {'attr': {'placeholder': 'Quote goes here'}}) }}
+		{{ form_widget(form.submit, {'attr': {'class': 'pure-button pure-button-primary'}}) }}
+	</fieldset>
+{{ form_end(form) }}
